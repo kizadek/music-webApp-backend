@@ -1,0 +1,26 @@
+GET http://localhost:5000/
+
+###
+
+POST http://localhost:8000/api/v1/admin/signUp
+content-type: application/json
+
+{
+    "firstName": "0971196736",
+     "lastName": "0971196736",
+      "email": "Hassanseancrex@gmail.com",
+      "password": "Emerging247"
+}
+
+###
+POST http://localhost:8000/api/v1/admin/logIn
+content-type: application/json
+
+{
+    
+     "email": "Hassanseancrex@gmail.com",
+    "password": "Emerging247"
+}
+
+###
+DELETE  http://localhost:8000/api/v1/admin/login
