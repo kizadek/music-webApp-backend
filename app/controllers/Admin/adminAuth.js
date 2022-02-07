@@ -61,7 +61,8 @@ const adminAuthLogin = asyncWrapper(async (req, res, next) => {
     id: adminUser.id,
     firstName: adminUser.firstName,
     lastName: adminUser.lastName,
-    email: admin.email,
+    email: adminUser.email,
+    createdAt: adminUser.createdAt,
   };
 
   res.status(200).json({

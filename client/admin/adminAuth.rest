@@ -51,7 +51,6 @@ POST https://music-website-backend.herokuapp.com/api/v1/admin/logIn
 content-type: application/json
 
 {
-    
      "email": "Hassanseancrex@gmail.com",
     "password": "Emerging247"
 }
