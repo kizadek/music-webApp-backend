@@ -24,7 +24,7 @@ const adminAuthSignUp = asyncWrapper(async (req, res, next) => {
   res.status(200).json({
     success: true,
     msg: ` ${(admin, firstName)} ${(admin, lastName)} account created `,
-    data: { admin },
+    // data: { admin },
   });
 });
 
@@ -32,7 +32,7 @@ const adminAuthSignUp = asyncWrapper(async (req, res, next) => {
 /** end point  api/v1/admin */
 const adminAuthLogin = asyncWrapper(async (req, res, next) => {
   const { email, password } = req.body;
-  console.log("admin", req.body);
+  //console.log("admin", req.body);
 
   const adminUser = await Admin.findOne({
     where: {
@@ -55,7 +55,7 @@ const adminAuthLogin = asyncWrapper(async (req, res, next) => {
     );
   // generate atoken
   const tokenObject = { id: adminUser.id, email: adminUser.email };
-  console.log(tokenObject);
+  //console.log(tokenObject);
   const token = await jwt.sign({ tokenObject }, jwtSecrest, {
     expiresIn: "30d",
   });
