@@ -1,6 +1,4 @@
-GET http://localhost:5000/
-
-###
+GET http://localhost:8000/test
 
 POST http://localhost:8000/api/v1/admin/signUp
 content-type: application/json
@@ -23,4 +21,38 @@ content-type: application/json
 }
 
 ###
-DELETE  http://localhost:8000/api/v1/admin/login
+DELETE  http://localhost:8000/api/v1/admin/delete/
+
+
+
+
+//// production
+
+###
+GET  https://music-website-backend.herokuapp.com/test
+
+
+POST https://music-website-backend.herokuapp.com/api/v1/admin/signUp
+content-type: application/json
+
+{
+    "firstName": "0971196736",
+     "lastName": "0971196736",
+      "email": "Hassanseancrex@gmail.com",
+      "password": "Emerging247"
+}
+
+
+###
+POST https://music-website-backend.herokuapp.com/api/v1/admin/logIn
+content-type: application/json
+
+{
+    
+     "email": "Hassanseancrex@gmail.com",
+    "password": "Emerging24"
+}
+
+###
+DELETE  https://music-website-backend.herokuapp.com/api/v1/admin/delete/
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbk9iamVjdCI6eyJpZCI6IjYyMDAyYzRjZTljMzIzMzFjNTYxYWNkYiIsImVtYWlsIjoiSGFzc2Fuc2VhbmNyZXhAZ21haWwuY29tIn0sImlhdCI6MTY0NDE4MTcyNSwiZXhwIjoxNjQ2NzczNzI1fQ.ZKXvMNvkyiyuSfaStFrwv_EFi22gMNOp2LVDdvl1T6I"
