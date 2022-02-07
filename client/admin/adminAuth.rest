@@ -1,12 +1,14 @@
 GET http://localhost:8000/test
 
+###
+
 POST http://localhost:8000/api/v1/admin/signUp
 content-type: application/json
 
 {
-    "firstName": "0971196736",
-     "lastName": "0971196736",
-      "email": "Hassanseancrex@gmail.com",
+    "firstName": "Sean",
+     "lastName": "Crex",
+      "email": "hassanseancrex@gmail.com",
       "password": "Emerging247"
 }
 
@@ -16,7 +18,7 @@ content-type: application/json
 
 {
     
-     "email": "Hassanseancrex@gmail.com",
+     "email": "hassanseancrex@gmail.com",
     "password": "Emerging247"
 }
 
@@ -36,11 +38,12 @@ POST https://music-website-backend.herokuapp.com/api/v1/admin/signUp
 content-type: application/json
 
 {
-    "firstName": "0971196736",
-     "lastName": "0971196736",
-      "email": "Hassanseancrex@gmail.com",
+    "firstName": "Sean",
+     "lastName": "Crex",
+      "email": "hassanseancrex@gmail.com",
       "password": "Emerging247"
 }
+
 
 
 ###
@@ -50,7 +53,7 @@ content-type: application/json
 {
     
      "email": "Hassanseancrex@gmail.com",
-    "password": "Emerging24"
+    "password": "Emerging247"
 }
 
 ###
