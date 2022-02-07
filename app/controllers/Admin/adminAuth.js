@@ -34,17 +34,13 @@ const adminAuthLogin = asyncWrapper(async (req, res, next) => {
   const { email, password } = req.body;
   //console.log("admin", req.body);
 
-  const adminUser = await Admin.findOne({
-    where: {
-      email,
-    },
-  });
+  let adminUser = await Admin.findOne({ email: email });
 
   if (!adminUser)
     return next(
       createCustomError("email or password combination incorrect", 401)
     );
-
+  //console.log(adminUser);
   const hashedPassword = adminUser.password;
   //console.log(hashedPassword);
   const isValid = await compareHashe(password, hashedPassword);
@@ -53,12 +49,21 @@ const adminAuthLogin = asyncWrapper(async (req, res, next) => {
     return next(
       createCustomError("email or password combination incorrect", 401)
     );
+
   // generate atoken
   const tokenObject = { id: adminUser.id, email: adminUser.email };
   //console.log(tokenObject);
   const token = await jwt.sign({ tokenObject }, jwtSecrest, {
     expiresIn: "30d",
   });
+
+  adminUser = {
+    id: adminUser.id,
+    firstName: adminUser.firstName,
+    lastName: adminUser.lastName,
+    email: admin.email,
+  };
+
   res.status(200).json({
     success: true,
     token: token,
