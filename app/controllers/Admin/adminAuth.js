@@ -41,14 +41,18 @@ const adminAuthLogin = asyncWrapper(async (req, res, next) => {
   });
 
   if (!adminUser)
-    return next(createCustomError("email or password combination incorrect"));
+    return next(
+      createCustomError("email or password combination incorrect", 401)
+    );
 
   const hashedPassword = adminUser.password;
   //console.log(hashedPassword);
   const isValid = await compareHashe(password, hashedPassword);
   console.log(isValid);
   if (!isValid)
-    return next(createCustomError("email or password combination incorrect"));
+    return next(
+      createCustomError("email or password combination incorrect", 401)
+    );
   // generate atoken
   const tokenObject = { id: adminUser.id, email: adminUser.email };
   console.log(tokenObject);
